@@ -1,0 +1,22 @@
+version: "3.8"
+name: minecraft
+services:
+  minecraft:
+    container_name: minecraft
+    restart: always
+    image: itzg/minecraft-server
+    tty: true
+    stdin_open: true
+    ports:
+      - "25565:25565"
+    environment:
+      SERVER_NAME: "Rushando o dragão"
+      EULA: "TRUE"
+      MEMORY: "2G"
+      DIFFICULTY: "hard"
+      ICON: "https://cdn.discordapp.com/attachments/766669756367372288/1014314892163026996/wolverine_frame.png"
+      OVERRIDE_ICON: "TRUE"
+      MOTD: "Objetivo é pegar no ovo do dragão"
+
+    volumes:
+      - ./data:/data
